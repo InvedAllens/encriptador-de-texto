@@ -1,0 +1,234 @@
+html{
+    font-size: 16px;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    
+}
+.contenedor{
+    height: 100vh;
+    /*background:conic-gradient(from 135deg,#AAB2D5,#356FA9);*/
+    /* background: #E5E5E5; */
+    /* background: linear-gradient(135deg, rgba(255,255,255,1) 17%, rgba(170,178,213,1) 100%); */
+    background: linear-gradient(135deg, rgba(255,255,255,0.4458158263305322) 17%, rgba(170,178,213,0.7847514005602241) 84%);
+
+}
+header{
+    width: 90%;
+    margin:0 auto;
+    /* background: rgba(0,0,0,0.5); */
+    height: 15vh;
+
+}
+main{
+    height: 85vh;
+    width: 100%;
+    text-align: center;
+}
+#icono-principal{
+    height: 13vh;
+    margin-top: 0.7%;  
+    /* box-shadow: 1px 1px 3px 1px #0A3871; */
+    margin-left:0;
+    }
+.contenedor-de-textos-principal{
+    width:90%;
+    margin: 0 auto;
+    /*background: red;*/
+    text-align: center;
+    height: 65vh;
+    display: flex;
+   
+    
+
+}
+.cuadro-contenido{
+    display: inline-block;
+    width: 65%;
+    height:65vh;
+    border-radius: 5px;
+    margin-left: 1%;
+    
+}
+.cuadro-texto-procesado{
+    display: flex;
+    width: 30%;
+    height: 65vh;
+    border-radius: 5px;
+    border: #000;
+    box-shadow: 1px 1px 5px 1px #0A3871;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    
+
+}
+#texto-desencriptado{
+resize: none;
+border-radius: 5px;
+box-shadow: 1px 1px 5px 1px #0A3871;
+/*background: #ccc;*/
+width: 95%;
+height: 60vh;
+font-size: 1.5rem;
+margin:2.5vh 0;
+background:transparent;
+}
+#texto-desencriptado:focus{
+    outline:none;
+}
+#imagen-no-encontrado{
+    width:85%;
+    margin:10% auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #fff;
+
+    
+}
+.cuadro-texto-procesado h2{
+    font-size: 1.2rem;
+    font-weight: bold;
+    height: 100%;
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.cuadro-contenido #texto-encriptado{
+    font-size: 1rem;
+    /* font-style: italic; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #fff;
+
+}
+/*Boton copiar*/
+#btn-copiar{
+    display: none;
+    margin: 1rem auto;
+    font-size:1rem;
+    border-radius: 10px;
+    padding: 0.8rem 3rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s all;
+   
+}
+
+/*Botones de encriptar y desencriptar*/
+.botones{
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    height: 20vh;
+    text-align: center;
+}
+.botones p{
+    font-style: italic;
+    margin: 1% 0;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 200,
+  'GRAD' -25,
+  'opsz' 20;
+}
+
+#btn-encriptar,#btn-desencriptar{
+    display:inline-block;
+    font-size:1rem;
+    border-radius: 10px;
+    padding: 0.8rem 3rem;
+    margin-left: 2rem;
+    border: none;
+    cursor: pointer;
+    
+}
+#btn-encriptar{
+    background: #0A3871;
+    color:#fff;
+    transition: 0.5s all;
+}
+#btn-encriptar:hover,#btn-desencriptar:hover,#btn-copiar:hover{
+    transform: scale(1.02);
+    opacity:0.7;
+}
+#btn-encriptar:active,#btn-desencriptar:active,#btn-copiar:active{
+    transform: scale(0.9);
+    opacity:1;
+}
+#btn-desencriptar{
+    background: #ADB5BD;
+    color:#0A3871;
+    transition: 0.5s all;
+}
+footer{
+    height: 10vh;
+    background: rgba(0,0,0,0.8);
+    text-align: center;
+    padding: 1% 0;
+
+}
+
+footer p{
+    text-align: center;
+    font-size: 0.9rem;
+    color: #fff;
+    margin: 5vh 0;
+    
+}
+/*.copyright{
+    margin:0;
+    padding: 0;
+    background: red;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 100,
+    'GRAD' -25,
+    'opsz' 5                                                      
+}*/
+
+/*Animaciones*/
+.animated {
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  .fast {
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  @keyframes fadeIn {
+    0%{
+      opacity: 0;
+    }
+  
+    50% {
+      opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+  }
+  
+  .fadeIn {
+    animation-name: fadeIn;
+  }
+
+  @media screen and (max-width:480px){
+    html{
+        font-size: 9px;
+    }
+}

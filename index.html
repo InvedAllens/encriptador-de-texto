@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./estilos.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style> @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&family=Source+Sans+Pro:ital@1&display=swap'); </style>
+    <script src="./main.js"></script>
+    <title>Desafio Encriptador de Texto</title>
+</head>
+
+<body>
+    <div class="contenedor">
+        <header>
+            <h1><img src="./images/file.png" alt="icono de encriptacion" id="icono-principal" class="animated fadeIn fast"></h1>
+        </header>
+        <main>
+            <div class="contenedor-de-textos-principal animated fadeIn fast">
+                <div class="cuadro-contenido">
+                    <textarea name="desencriptado" id="texto-desencriptado" 
+                    placeholder="Ingrese su texto aqui"></textarea>
+                </div>
+                
+
+                <div class="cuadro-texto-procesado animated fadeIn fast">
+                    <img id="imagen-no-encontrado" src="./images/Muñeco.png" alt="imagen ningun texto encontrado">
+                    <h2 id="mensaje-busqueda">Ningun mensaje fue encontrado</h2>
+                    <p id="texto-encriptado">Ingresa el texto que desees encriptar o desencriptar.</p>
+                    <input type="button" value="Copiar" onclick="copiarTexto()" id="btn-copiar">
+                </div>
+
+            </div>
+            <div class="botones">
+                <p class="animated fadeIn fast"><span class="material-symbols-outlined">error</span> Solo letras minusculas y sin acentos</p>
+                <input type="button" value="Encriptar" onclick="encriptarTexto()" id="btn-encriptar" class="animated fadeIn fast">
+                <input type="button" value="Desencriptar" onclick="desencriptarTexto()" id="btn-desencriptar" class="animated fadeIn fast">
+            </div>
+
+        </main>
+        <footer>
+            <p>Elaborado por Aldo Allende|</p>
+        </footer>
+
+    </div>
+
+
+</body>
+
+</html>
