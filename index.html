@@ -18,31 +18,37 @@
         <header>
             <h1><img src="./images/file.png" alt="icono de encriptacion" id="icono-principal" class="animated fadeIn fast"></h1>
         </header>
-        <main>
-            <div class="contenedor-de-textos-principal animated fadeIn fast">
+        <main class="contenedor-interfaz">
+            <section class="contenedor-entrada-texto-botones animated fadeIn fast">
+                
                 <div class="cuadro-contenido">
                     <textarea name="desencriptado" id="texto-desencriptado" 
                     placeholder="Ingrese su texto aqui"></textarea>
                 </div>
-                
+                <div class="botones">
+                    <p class="animated fadeIn fast"><span class="material-symbols-outlined">error</span> Solo letras minusculas y sin acentos</p>
+                    <input type="button" value="Encriptar" onclick="encriptarTexto()" id="btn-encriptar" class="animated fadeIn fast">
+                    <input type="button" value="Desencriptar" onclick="desencriptarTexto()" id="btn-desencriptar" class="animated fadeIn fast">
+                </div>               
 
-                <div class="cuadro-texto-procesado animated fadeIn fast">
+            </section>
+            <section class="contenedor-textos-resultados animated fadeIn fast">
+                <div class="cuadro-texto-procesado ">
                     <img id="imagen-no-encontrado" src="./images/Muñeco.png" alt="imagen ningun texto encontrado">
                     <h2 id="mensaje-busqueda">Ningun mensaje fue encontrado</h2>
-                    <p id="texto-encriptado">Ingresa el texto que desees encriptar o desencriptar.</p>
+                    <p id="texto-ayuda">Ingresa el texto que desees encriptar o desencriptar.</p>
+                    <textarea name="" id="texto-encriptado" ></textarea>
                     <input type="button" value="Copiar" onclick="copiarTexto()" id="btn-copiar">
                 </div>
 
-            </div>
-            <div class="botones">
-                <p class="animated fadeIn fast"><span class="material-symbols-outlined">error</span> Solo letras minusculas y sin acentos</p>
-                <input type="button" value="Encriptar" onclick="encriptarTexto()" id="btn-encriptar" class="animated fadeIn fast">
-                <input type="button" value="Desencriptar" onclick="desencriptarTexto()" id="btn-desencriptar" class="animated fadeIn fast">
-            </div>
+            </section>
+            
 
         </main>
         <footer>
-            <p>Elaborado por Aldo Allende|</p>
+            <p>Elaborado por Aldo Allende | </p>
+            <a href="https://github.com/InvedAllens" ><img src="./images/github.png" id="enlace-gitub" alt="icono github"></a>
+            <!-- <a href="https://www.flaticon.com/free-icons/github" title="github icons">Github icons created by Roundicons - Flaticon</a> -->
         </footer>
 
     </div>

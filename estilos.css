@@ -1,3 +1,6 @@
+/* *{
+    box-sizing: border-box;
+} */
 html{
     font-size: 16px;
 }
@@ -7,6 +10,7 @@ body{
 }
 .contenedor{
     height: 100vh;
+    width: 100%;
     /*background:conic-gradient(from 135deg,#AAB2D5,#356FA9);*/
     /* background: #E5E5E5; */
     /* background: linear-gradient(135deg, rgba(255,255,255,1) 17%, rgba(170,178,213,1) 100%); */
@@ -20,31 +24,45 @@ header{
     height: 15vh;
 
 }
-main{
-    height: 85vh;
-    width: 100%;
-    text-align: center;
-}
+
 #icono-principal{
     height: 13vh;
     margin-top: 0.7%;  
     /* box-shadow: 1px 1px 3px 1px #0A3871; */
     margin-left:0;
     }
-.contenedor-de-textos-principal{
-    width:90%;
-    margin: 0 auto;
-    /*background: red;*/
-    text-align: center;
-    height: 65vh;
+main{
+    height: 85vh;
+    width: 100%;
     display: flex;
-   
-    
+}
+.contendor-interfaz{
+    width: 90%;
+    height: 85vh;
+    display:flex;
+    justify-content:space-between;
+    flex-direction:row;
 
 }
+.contenedor-entrada-texto-botones{
+    width:65%;
+    /* background: red; */
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    /* box-sizing: border-box; */
+    margin: 0 auto;
+
+}
+.contenedor-textos-resultados{
+    width: 33%;
+    height: auto;
+    /* background: blue; */
+    display: flex;
+}
 .cuadro-contenido{
-    display: inline-block;
-    width: 65%;
+    display:flex;
+    width: 95%;
     height:65vh;
     border-radius: 5px;
     margin-left: 1%;
@@ -52,13 +70,13 @@ main{
 }
 .cuadro-texto-procesado{
     display: flex;
-    width: 30%;
-    height: 65vh;
+    width: 95%;
+    height: 75vh;
     border-radius: 5px;
     border: #000;
     box-shadow: 1px 1px 5px 1px #0A3871;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: #fff;
     
 
@@ -73,17 +91,17 @@ height: 60vh;
 font-size: 1.5rem;
 margin:2.5vh 0;
 background:transparent;
+line-height: 1.7rem;
 }
 #texto-desencriptado:focus{
     outline:none;
 }
 #imagen-no-encontrado{
-    width:85%;
+    width:80%;
     margin:10% auto;
-    height: 100%;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; */
     background: #fff;
 
     
@@ -91,22 +109,36 @@ background:transparent;
 .cuadro-texto-procesado h2{
     font-size: 1.2rem;
     font-weight: bold;
-    height: 100%;
     text-align: center;
     display:flex;
     flex-direction: column;
     justify-content: center;
     
 }
-.cuadro-contenido #texto-encriptado{
+#texto-ayuda{
     font-size: 1rem;
+    text-align: center;
+}
+ #texto-encriptado{
+    font-size: 1.1rem;
+    display: none;
+    width: 90%;
+    height: 50vh;
+    resize: none;
+    border: none;
+    margin: 0 auto;
+    line-height: 1.5rem;
+    text-align: justify;
     /* font-style: italic; */
-    height: 100%;
+    /* height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: #fff;
+    background: #fff; */
 
+}
+#texto-encriptar:focus{
+    outline: none;
 }
 /*Boton copiar*/
 #btn-copiar{
@@ -124,9 +156,9 @@ background:transparent;
 /*Botones de encriptar y desencriptar*/
 .botones{
     width: auto;
-    display: block;
+    display: inline-block;
     margin: 0 auto;
-    height: 20vh;
+    height: 15vh;
     text-align: center;
 }
 .botones p{
@@ -170,7 +202,7 @@ background:transparent;
     transition: 0.5s all;
 }
 footer{
-    height: 10vh;
+    height: auto;
     background: rgba(0,0,0,0.8);
     text-align: center;
     padding: 1% 0;
@@ -178,11 +210,20 @@ footer{
 }
 
 footer p{
+    display: inline-block;
     text-align: center;
     font-size: 0.9rem;
     color: #fff;
     margin: 5vh 0;
+    line-height: 1.2rem;
     
+}
+#enlace-github{
+    width: 0.5rem;
+}
+footer a{
+    display: inline-block;
+    font-size: 0.5rem;
 }
 /*.copyright{
     margin:0;
