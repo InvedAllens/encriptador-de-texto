@@ -7,6 +7,7 @@ function encriptarTexto(){
     let textoProcesado=document.getElementById("texto-encriptado");
     let btnCopiar=document.getElementById("btn-copiar");
     let parrafoAdvertencia=document.getElementById("parrafo-advertencia");
+    document.getElementById("btn-copiar").value="Copiar";
     if(texto){
         if((/[^a-z\s]+/.test(texto))){// evaluacion de la coincidencia del complemento de letras minusculas y espacios
             let resultado=/[A-Z\s]+/g.test(texto);
@@ -52,6 +53,7 @@ function desencriptarTexto(){
     let textoProcesado=document.getElementById("texto-encriptado");
     let btnCopiar=document.getElementById("btn-copiar");
     let parrafoAdvertencia=document.getElementById("parrafo-advertencia");
+    document.getElementById("btn-copiar").value="Copiar";
     if(texto){
         if(/[A-Z]+/g.test(texto) || !(/^[a-zA-Z\s]+$/.test(texto))){
             let resultado=/[A-Z\s]+/g.test(texto);
@@ -92,6 +94,7 @@ function copiarTexto(){
     let copiado=document.getElementById("texto-encriptado").innerHTML;
     navigator.clipboard.writeText(copiado).then(()=>console.log("texto copiado en el portapapeles")).
     catch((err)=>console.log("sucedio un error", err));
+    document.getElementById("btn-copiar").value="copiado";
 }
 
 function borrarArea(){
