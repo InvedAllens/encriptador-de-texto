@@ -386,6 +386,7 @@ footer a{
     }
     #btn-encriptar, #btn-desencriptar, #btn-borrar-texto {
         margin-bottom: 1%;
+        padding: 0.7rem 3rem;
     }
     .contenedor-textos-resultados{
         width: 95%;
