@@ -28,6 +28,7 @@ function encriptarTexto(){
             textoProcesado.innerHTML=textoEncriptado;
             textoProcesado.style.display="inherit";
             btnCopiar.style.display="inherit";
+            document.getElementById("texto-desencriptado").value="";
         }
 
     
@@ -75,6 +76,7 @@ function desencriptarTexto(){
             textoProcesado.innerHTML=textoDesencriptado;
             textoProcesado.style.display="inherit";
             btnCopiar.style.display="flex";
+            document.getElementById("texto-desencriptado").value="";
         }
     
     }else{
