@@ -1,17 +1,19 @@
-const   texto=document.querySelector("#texto-desencriptado").value, 
-        imagen=document.querySelector("#imagen-no-encontrado"),
-        parrafo=document.querySelector("#mensaje-busqueda"),
-        textoAyuda=document.querySelector("#texto-ayuda"),
-        textoProcesado=document.querySelector("#texto-encriptado"),
-        btnCopiar=document.querySelector("#btn-copiar"),
-        parrafoAdvertencia=document.querySelector("#parrafo-advertencia");
+
+const texto=document.querySelector("#texto-desencriptado"), 
+    imagen=document.querySelector("#imagen-no-encontrado"),
+    parrafo=document.querySelector("#mensaje-busqueda"),
+    textoAyuda=document.querySelector("#texto-ayuda"),
+    textoProcesado=document.querySelector("#texto-encriptado"),
+    btnCopiar=document.querySelector("#btn-copiar"),
+    parrafoAdvertencia=document.querySelector("#parrafo-advertencia");
+
 
 
 function encriptarTexto(){
-   
-    document.querySelector("#btn-copiar").value="Copiar";
-    if(texto){
-        if((/[^a-z\s]+/.test(texto))){// evaluacion de la coincidencia del complemento de letras minusculas y espacios
+    let textoEntrada=texto.value;
+    btnCopiar.value="Copiar";
+    if(textoEntrada){
+        if((/[^a-z\s]+/.test(textoEntrada))){// evaluacion de la coincidencia del complemento de letras minusculas y espacios
 
             parrafoAdvertencia.classList.remove("animado");
             setTimeout(()=>parrafoAdvertencia.classList.add("animado"),100);
@@ -19,7 +21,7 @@ function encriptarTexto(){
             imagen.style.display="none";
             parrafo.style.display="none";
             textoAyuda.style.display="none"
-            let textoEncriptado=texto.replace(/e/igm,"enter");
+            let textoEncriptado=textoEntrada.replace(/e/igm,"enter");
             textoEncriptado=textoEncriptado.replace(/o/igm,"ober");
             textoEncriptado=textoEncriptado.replace(/i/igm,"imes");
             textoEncriptado=textoEncriptado.replace(/a/igm,"ai");
@@ -27,7 +29,7 @@ function encriptarTexto(){
             textoProcesado.innerHTML=textoEncriptado;
             textoProcesado.style.display="inherit";
             btnCopiar.style.display="inherit";
-            document.querySelector("#texto-desencriptado").value="";
+            texto.value="";
         }
 
     
@@ -46,10 +48,10 @@ function encriptarTexto(){
 }
 
 function desencriptarTexto(){
-
-    document.querySelector("#btn-copiar").value="Copiar";
-    if(texto){
-        if((/[^a-z\s]+/.test(texto))){// evaluacion de la coincidencia del complemento de letras minusculas y espacios(regresa true si encuentra almenos una coincidencia)
+   let textoEntrada=texto.value;
+    btnCopiar.value="Copiar";
+    if(textoEntrada){
+        if((/[^a-z\s]+/.test(textoEntrada))){// evaluacion de la coincidencia del complemento de letras minusculas y espacios(regresa true si encuentra almenos una coincidencia)
             parrafoAdvertencia.classList.remove("animado");
             setTimeout(()=>parrafoAdvertencia.classList.add("animado"),100);
         }
@@ -57,7 +59,7 @@ function desencriptarTexto(){
             imagen.style.display="none";
             parrafo.style.display="none";
             textoAyuda.style.display="none";
-            let textoDesencriptado=texto.replace(/enter/igm,"e");
+            let textoDesencriptado=textoEntrada.replace(/enter/igm,"e");
             textoDesencriptado=textoDesencriptado.replace(/ober/igm,"o");
             textoDesencriptado=textoDesencriptado.replace(/imes/igm,"i");
             textoDesencriptado=textoDesencriptado.replace(/ai/igm,"a");
@@ -65,7 +67,7 @@ function desencriptarTexto(){
             textoProcesado.innerHTML=textoDesencriptado;
             textoProcesado.style.display="inherit";
             btnCopiar.style.display="flex";
-            document.querySelector("#texto-desencriptado").value="";
+            texto.value="";
         }
     
     }else{
@@ -82,12 +84,12 @@ function desencriptarTexto(){
 }
 
 function copiarTexto(){
-    let copiado=document.querySelector("#texto-encriptado").innerHTML;
+    let copiado=textoProcesado.innerHTML;
     navigator.clipboard.writeText(copiado).then(()=>console.log("texto copiado en el portapapeles")).
     catch((err)=>console.log("sucedio un error", err));
-    document.querySelector("btn-copiar").value="copiado";
+    btnCopiar.value="copiado";
 }
 
 function borrarArea(){
-    document.querySelector("#texto-desencriptado").value="";
+    texto.value="";
 }
