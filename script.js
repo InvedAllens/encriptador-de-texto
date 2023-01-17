@@ -1,19 +1,18 @@
+const   texto=document.querySelector("#texto-desencriptado").value, 
+        imagen=document.querySelector("#imagen-no-encontrado"),
+        parrafo=document.querySelector("#mensaje-busqueda"),
+        textoAyuda=document.querySelector("#texto-ayuda"),
+        textoProcesado=document.querySelector("#texto-encriptado"),
+        btnCopiar=document.querySelector("#btn-copiar"),
+        parrafoAdvertencia=document.querySelector("#parrafo-advertencia");
+
 
 function encriptarTexto(){
-    let texto=document.getElementById("texto-desencriptado").value;
-    let imagen=document.getElementById("imagen-no-encontrado");
-    let parrafo=document.getElementById("mensaje-busqueda");
-    let textoAyuda=document.getElementById("texto-ayuda");
-    let textoProcesado=document.getElementById("texto-encriptado");
-    let btnCopiar=document.getElementById("btn-copiar");
-    let parrafoAdvertencia=document.getElementById("parrafo-advertencia");
-    document.getElementById("btn-copiar").value="Copiar";
+   
+    document.querySelector("#btn-copiar").value="Copiar";
     if(texto){
         if((/[^a-z\s]+/.test(texto))){// evaluacion de la coincidencia del complemento de letras minusculas y espacios
-            let resultado=/[A-Z\s]+/g.test(texto);
-            let resultado2=/\W+/g.test(texto);
-            console.log(resultado +" y "+ resultado2);
-            console.log("solo se permiten minusculas sin acentos");
+
             parrafoAdvertencia.classList.remove("animado");
             setTimeout(()=>parrafoAdvertencia.classList.add("animado"),100);
         }else{
@@ -28,7 +27,7 @@ function encriptarTexto(){
             textoProcesado.innerHTML=textoEncriptado;
             textoProcesado.style.display="inherit";
             btnCopiar.style.display="inherit";
-            document.getElementById("texto-desencriptado").value="";
+            document.querySelector("#texto-desencriptado").value="";
         }
 
     
@@ -47,20 +46,10 @@ function encriptarTexto(){
 }
 
 function desencriptarTexto(){
-    let texto=document.getElementById("texto-desencriptado").value;
-    let imagen=document.getElementById("imagen-no-encontrado");
-    let parrafo=document.getElementById("mensaje-busqueda");
-    let textoAyuda=document.getElementById("texto-ayuda");
-    let textoProcesado=document.getElementById("texto-encriptado");
-    let btnCopiar=document.getElementById("btn-copiar");
-    let parrafoAdvertencia=document.getElementById("parrafo-advertencia");
-    document.getElementById("btn-copiar").value="Copiar";
+
+    document.querySelector("#btn-copiar").value="Copiar";
     if(texto){
-        if(/[A-Z]+/g.test(texto) || !(/^[a-zA-Z\s]+$/.test(texto))){
-            let resultado=/[A-Z\s]+/g.test(texto);
-            let resultado2=/^[a-zA-Z\s]+$/.test(texto);
-            console.log(resultado +" y "+ resultado2);
-            console.log("solo se permiten minusculas sin acentos");
+        if((/[^a-z\s]+/.test(texto))){// evaluacion de la coincidencia del complemento de letras minusculas y espacios(regresa true si encuentra almenos una coincidencia)
             parrafoAdvertencia.classList.remove("animado");
             setTimeout(()=>parrafoAdvertencia.classList.add("animado"),100);
         }
@@ -76,7 +65,7 @@ function desencriptarTexto(){
             textoProcesado.innerHTML=textoDesencriptado;
             textoProcesado.style.display="inherit";
             btnCopiar.style.display="flex";
-            document.getElementById("texto-desencriptado").value="";
+            document.querySelector("#texto-desencriptado").value="";
         }
     
     }else{
@@ -93,12 +82,12 @@ function desencriptarTexto(){
 }
 
 function copiarTexto(){
-    let copiado=document.getElementById("texto-encriptado").innerHTML;
+    let copiado=document.querySelector("#texto-encriptado").innerHTML;
     navigator.clipboard.writeText(copiado).then(()=>console.log("texto copiado en el portapapeles")).
     catch((err)=>console.log("sucedio un error", err));
-    document.getElementById("btn-copiar").value="copiado";
+    document.querySelector("btn-copiar").value="copiado";
 }
 
 function borrarArea(){
-    document.getElementById("texto-desencriptado").value="";
+    document.querySelector("#texto-desencriptado").value="";
 }
