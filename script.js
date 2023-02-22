@@ -10,7 +10,7 @@ const texto=document.querySelector("#texto-desencriptado"),
 
 
 function encriptarTexto(){
-    let textoEntrada=texto.value;
+    let textoEntrada=texto.value;//al ejecutarse por primera vez el texto no tiene nada, se tiene que volver a cargar cuando posiblemente ya tenga un valor ejemplo en este punto 
     btnCopiar.value="Copiar";
     if(textoEntrada){
         if((/[^a-z\s]+/.test(textoEntrada))){// evaluacion de la coincidencia del complemento de letras minusculas y espacios
@@ -36,7 +36,7 @@ function encriptarTexto(){
     }else{
         parrafo.style.display="inherit";
         if(screen.width>=780){
-            console.log(screen.width)
+            //console.log(screen.width)
             imagen.style.display="inherit";
         }
         
@@ -85,11 +85,28 @@ function desencriptarTexto(){
 
 function copiarTexto(){
     let copiado=textoProcesado.innerHTML;
-    navigator.clipboard.writeText(copiado).then(()=>console.log("texto copiado en el portapapeles")).
+    let toastr=document.querySelector(".toastr-mensaje");
+    if(toastr.style.display=='inherit'){
+        return;
+    }
+    navigator.clipboard.writeText(copiado).then(()=>{
+        //console.log("texto copiado en el portapapeles")
+        toastr.style.display="inherit";
+        // toastr.style.padding="1rem";
+        setTimeout(function(){
+            toastr.style.display="none";
+            // toastr.style.padding="0rem";
+        },3000);
+    }).
     catch((err)=>console.log("sucedio un error", err));
-    btnCopiar.value="copiado";
 }
 
 function borrarArea(){
     texto.value="";
 }
+// function hover(element){
+//     element.setAttribute('src',"./images/github.png");
+// }
+// function unhover(element){
+//     element.setAttribute('src',"./images/logo.svg");
+// }

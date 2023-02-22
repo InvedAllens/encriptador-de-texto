@@ -21,7 +21,7 @@
 <body>
     <div class="contenedor">
         <header>
-            <img src="./images/Logo.svg" alt="icono de encriptacion" id="icono-principal" class="animated fadeIn fast">
+            <img src="./images/Logo.svg" alt="icono de encriptacion" id="icono-principal" class="animated fadeIn fast" >
             <h1 class="animated fadeIn fast">Encriptador de Texto</h1>
         </header>
         <main class="contenedor-interfaz">
@@ -58,6 +58,9 @@
                     <h2 id="mensaje-busqueda">Ningun mensaje fue encontrado</h2>
                     <p id="texto-ayuda">Ingresa el texto que desees encriptar o desencriptar.</p>
                     <textarea name="" id="texto-encriptado" readonly></textarea>
+                    <div class="toastr">
+                        <p class="toastr-mensaje">Texto copiado en el portapapeles</p>
+                    </div>
                     <input type="button" value="Copiar" onclick="copiarTexto()" id="btn-copiar">
                 </div>
 
