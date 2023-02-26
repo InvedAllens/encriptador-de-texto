@@ -433,7 +433,7 @@ footer svg:hover{
 
     position: relative;
     z-index: 1;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 }
 .toastr-mensaje{
     display:none;
@@ -446,8 +446,9 @@ footer svg:hover{
     padding: 1rem;
     color:#fff;
     font-weight: 700;
+    font-weight: 700;
     text-align: center;
-    animation: entrada-toastr 0.7s ;
+    animation: entrada-toastr 0.7s linear ;
     margin-bottom: 1rem;
    
 
@@ -455,28 +456,18 @@ footer svg:hover{
 @keyframes entrada-toastr{
 
     0%{
-        /* font-size: 0rem; */
-
-        /* height:0rem; */
         top:35px;
-    }
-    25%{
-        /* font-size: 0.25rem; */
-        /* height:0.25rem; */
-        top:25px;
-    }
-    50%{
-        /* font-size: 0.5rem; */
-        /* height: 0.5rem; */
-        top:15px;
-    }
-    75%{
-        /* font-size: 0.75rem; */
-        /* height: .75rem; */
-        top:10px;
-    }
-    100%{
-        /* height:1rem; */
-        top:0px;
-    }
+      }
+      25%{
+          top:26.25px;
+      }
+      50%{
+          top:17.5px;
+      }
+      75%{
+          top:8.75px;
+      }
+      100%{
+          top:0px;
+      }
 }
